@@ -1,0 +1,25 @@
+<!-- 登録フォーム -->
+<%= form_tag("/create") do %>
+  <input class="input_entry" type="email" name="mail_address" placeholder="メールアドレスを入力してください">
+  <input class="top_input_submit" type="submit" value="登録">
+<% end %>
+<!-- //登録フォーム -->
+
+<!-- 削除フォーム -->
+<%= form_tag("/delete") do %>
+  <input class="input_destroy" type="email" name="mail_address" placeholder="メールアドレスを入力してください">
+  <input class="top_input_submit" type="submit" value="削除">
+<% end %>
+<!-- //削除フォーム -->
+
+<div class="recommendation">
+  <h2>Recommendation For You</h2>
+    <p class="album_heading">Artist</p>
+    <p class="album_text"><%= @album["artists"][0]["name"] %></p>
+    <p class="album_heading">Album</p>
+    <p class="album_text"><%= @album["name"] %></p>
+    <p class="album_heading">Release Date</p>
+    <p class="album_text"><%= @album["release_date"] %></p>
+    <p><a href='<%= @album["external_urls"]["spotify"] %>'><img src='<%= @album["images"][1]["url"]%>'></a></p>
+</div>
+

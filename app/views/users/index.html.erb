@@ -1,0 +1,16 @@
+<ul class="index_list">
+  <% @users.each do |user| %>
+    <li>
+      <%= user.mail_address %>
+
+      <%= form_tag("/#{user.id}/delete") do %>
+      <input type="submit" value="削除">
+      <% end %>
+
+      <%= form_tag("/#{user.id}/send_instant") do %>
+      <input type="submit" value="メール即時配信">
+      <% end %>
+
+    </li>
+  <% end %>
+<ul>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TeamLesson02</title>
+    <link href="https://fonts.googleapis.com/css?family=Beth+Ellen|Monoton&display=swap" rel="stylesheet">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+<body>
+  <div class="container">
+    <div class="wrapper">
+      <div class="body">
+        <h1><%= link_to("Music Concierge","/") %></h1>
+
+        <%= yield %>
+        
+        <% if flash[:notice] %>
+          <div class="flash">
+            <%= flash[:notice] %>
+          </div>
+        <% end %>
+
+        <footer>
+          <p><%= link_to("#{@link_name}","#{@link_path}") %></p>
+        </footer>
+      <div>
+      <!-- //body -->
+    </div>
+    <!-- //wrapper -->
+  </div>
+  <!-- //container -->
+</body>
+
+</html>

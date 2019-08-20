@@ -1,0 +1,27 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.index_list{
+  li {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 130%;
+    form {
+      display: inline;
+    }
+    form:nth-child(1) {
+      margin: 0 0 0 10px;
+    }
+    input {
+      font-size: 70%;
+      display: inline;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 2px;
+      background: none;
+      color: rgba(255, 255, 255, 0.9);
+      cursor: pointer;
+    }
+  }
+}
