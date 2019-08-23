@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get '/' => 'home#top'
   get '/index' => 'users#index'
+  post '/' => 'users#send_album_mail'
 
   post '/create' => 'users#create'
   get '/create' => 'home#top'
