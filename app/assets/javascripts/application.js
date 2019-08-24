@@ -14,6 +14,8 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+// このコメントの追加が必要
 //= require jquery
 
 $(function(){

@@ -67,4 +67,13 @@ class UsersController < ApplicationController
     @users = User.all
     render('users/index')
   end
+
+  def send_album_mail
+    @users = User.all
+
+    @users.each do |user|
+      MusicDistributionMailer.instant_delivery(user).deliver_now
+    end
+  end
 end
+
