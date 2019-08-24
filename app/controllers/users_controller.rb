@@ -55,6 +55,12 @@ class UsersController < ApplicationController
   end
 
   def send_instant
+    unless set_dend_flag
+      @users = User.all
+      render('users/index')
+      return
+    end
+
     @user = User.find_by(id: params[:id])
 
     if @user
@@ -69,11 +75,25 @@ class UsersController < ApplicationController
   end
 
   def send_album_mail
-    @users = User.all
+    if set_dend_flag
+      @users = User.all
 
-    @users.each do |user|
-      MusicDistributionMailer.instant_delivery(user).deliver_now
+      @users.each do |user|
+        MusicDistributionMailer.instant_delivery(user).deliver_now
+      end
     end
   end
+
+  # 本番観葉でのみメール送信にsend_keyパラメータを要求する
+  def set_dend_flag
+    if Rails.env = "development"
+      true
+    elsif Rails.env = "production" && ENV["SEND_KEY"] == params[:send_key]
+      true
+    else
+      false
+    end
+  end
+
 end
 
