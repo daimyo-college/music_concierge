@@ -549,3 +549,56 @@ Processing by HomeController#top as HTML
 Completed 200 OK in 782ms (Views: 57.4ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2019-08-24 11:09:39 +0900
+  [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/aksk/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/aksk/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#top as HTML
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (12.3ms)
+Completed 500 Internal Server Error in 640ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    15: <div class="recommendation">
+    16:   <h2>Recommendation For You</h2>
+    17:     <p class="album_heading">Artist</p>
+    18:     <p class="album_text"><%= @album["artists"][0]["name"] %></p>
+    19:     <p class="album_heading">Album</p>
+    20:     <p class="album_text"><%= @album["name"] %></p>
+    21:     <p class="album_heading">Release Date</p>
+  
+app/views/home/top.html.erb:18:in `_app_views_home_top_html_erb___1340968488413735717_70316681739300'
+Started GET "/" for ::1 at 2019-08-24 11:09:44 +0900
+Processing by HomeController#top as HTML
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 746ms (Views: 239.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create" for ::1 at 2019-08-24 11:09:57 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BTz1dwN1j+8dYR8d8hgmFTjd4tnq9anYb4a79LZLc+DSThhLELnEKAdXwPVxG8lryndw1JX5N1DZJFCBsTNFWA==", "mail_address"=>""}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:17
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`mail_address` = BINARY '' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:17
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:17
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 705ms (Views: 28.8ms | ActiveRecord: 26.0ms)
+
+
+Started POST "/delete" for ::1 at 2019-08-24 11:10:04 +0900
+Processing by UsersController#delete as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+Wn0AHdmbR/Hjy4Uhkah1F1PoEGDCa5CaWOLaHaPoZouGxk8ZKom2N258fwFRU6qr+UyTPwFMMrfwWAdcfeXIg==", "mail_address"=>""}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`mail_address` = '' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:28
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 549ms (Views: 32.1ms | ActiveRecord: 0.4ms)
+
+
