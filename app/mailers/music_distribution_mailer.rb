@@ -2,10 +2,16 @@ class MusicDistributionMailer < ApplicationMailer
   before_action :spofify
 
   INSTANT_DELIVERY_SUBJECT = "即時配信です"
+  REGULAR_DELIVERY_SUBJECT = "定時配信です"
 
   def instant_delivery(user)
     @user = user
     mail(to: user.mail_address, subject: INSTANT_DELIVERY_SUBJECT)
+  end
+
+  def regular_deliverry(user)
+    @user = user
+    mail(to: user.mail_address, subject: REGULAR_DELIVERY_SUBJECT)
   end
 
   CLIENT_ID = ENV["CLIENT_ID"]
