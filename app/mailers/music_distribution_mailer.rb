@@ -9,7 +9,7 @@ class MusicDistributionMailer < ApplicationMailer
     mail(to: user.mail_address, subject: INSTANT_DELIVERY_SUBJECT)
   end
 
-  def regular_deliverry(user)
+  def regular_delivery(user)
     @user = user
     mail(to: user.mail_address, subject: REGULAR_DELIVERY_SUBJECT)
   end
