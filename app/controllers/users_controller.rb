@@ -2,6 +2,8 @@ class UsersController < ApplicationController
   before_action :set_link
   before_action :spofify
 
+  protect_from_forgery :expect => [:send_album_mail]
+
   def set_link
     @link_name = "TOPへ戻る"
     @link_path = "/"
