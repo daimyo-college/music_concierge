@@ -1,6 +1,8 @@
 class MusicDistributionMailer < ApplicationMailer
   before_action :spofify
 
+  protect_from_forgery :expect => [:regular_delivery]
+
   INSTANT_DELIVERY_SUBJECT = "即時配信です"
   REGULAR_DELIVERY_SUBJECT = "定時配信です"
 
