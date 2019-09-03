@@ -81,7 +81,8 @@ class UsersController < ApplicationController
       @users = User.all
 
       @users.each do |user|
-        MusicDistributionMailer.instant_delivery(user).deliver_now
+        # MusicDistributionMailer.instant_delivery(user).deliver_now
+        MusicDistributionMailer.regular_delivery(user).deliver_now
       end
     end
   end

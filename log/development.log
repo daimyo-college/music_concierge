@@ -1065,3 +1065,595 @@ Processing by HomeController#top as HTML
 Completed 200 OK in 761ms (Views: 42.3ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2019-09-03 18:55:07 +0900
+  [1m[35m (21.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/aksk/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (9.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/aksk/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#top as HTML
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 1024ms (Views: 298.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/index" for ::1 at 2019-09-03 18:55:13 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (44.4ms)
+Completed 200 OK in 632ms (Views: 82.6ms | ActiveRecord: 29.0ms)
+
+
+Started POST "/1/send_instant" for ::1 at 2019-09-03 18:55:16 +0900
+Processing by UsersController#send_instant as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hy+Q+4m5kal5zM3PxVjKJMhcVPg7Fb07dUyv90N0to5lbgpxyVke595r3QeGV0CRRjKbOb7s+ofHfuhcqGBTWw==", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:66
+  Rendering music_distribution_mailer/instant_delivery.html.erb within layouts/mailer
+  Rendered music_distribution_mailer/instant_delivery.html.erb within layouts/mailer (1.0ms)
+  Rendering music_distribution_mailer/instant_delivery.text.erb within layouts/mailer
+  Rendered music_distribution_mailer/instant_delivery.text.erb within layouts/mailer (0.5ms)
+MusicDistributionMailer#instant_delivery: processed outbound mail in 1274.8ms
+Sent mail to coding_addiction@yahoo.co.jp (3221.9ms)
+Date: Tue, 03 Sep 2019 18:55:18 +0900
+From: from@example.com
+To: coding_addiction@yahoo.co.jp
+Message-ID: <5d6e388652421_20993fca516d9d0891652@akimotoshunsukenoMacBook.local.mail>
+Subject: =?UTF-8?Q?=E5=8D=B3=E6=99=82=E9=85=8D=E4=BF=A1=E3=81=A7=E3=81=99?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5d6e38864dd3a_20993fca516d9d0891563";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5d6e38864dd3a_20993fca516d9d0891563
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+Y29kaW5nX2FkZGljdGlvbkB5YWhvby5jby5qcOWum+OBq+mFjeS/oeOBl+OB
+puOBhOOBvuOBmQ0K
+
+----==_mimepart_5d6e38864dd3a_20993fca516d9d0891563
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta content=3D'text/html; charset=3DUTF-8' http-equiv=3D'Content-Ty=
+pe' />=0D
+  </head>=0D
+  <body>=0D
+    <p style=3D"border-bottom: solid 2px black;">=E2=96=A0 Artist</p>=0D
+    <p class=3D"album_text">Pretenders</p>=0D
+    <p style=3D"border-bottom: solid 2px black;">=E2=96=A0 Album</p>=0D
+    <p class=3D"album_text">Last Of The Independents</p>=0D
+    <p style=3D"border-bottom: solid 2px black;">=E2=96=A0 Release Date</=
+p>=0D
+    <p class=3D"album_text">1994-06-01</p>=0D
+    <p><a href=3D'https://open.spotify.com/album/6MH35oajuCbpS9YBmwTrPf'>=
+<img src=3D'https://i.scdn.co/image/82d00510a4fee87994f05e15cfe21a0ee81f7=
+193'></a></p>=0D
+  </body>=0D
+</html>=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5d6e38864dd3a_20993fca516d9d0891563--
+
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 5467ms (Views: 51.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2019-09-03 18:55:23 +0900
+Processing by HomeController#top as HTML
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 685ms (Views: 71.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/index" for ::1 at 2019-09-03 18:58:13 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (33.1ms)
+Completed 200 OK in 647ms (Views: 52.3ms | ActiveRecord: 23.2ms)
+
+
+Started POST "/1/send_instant" for ::1 at 2019-09-03 18:58:15 +0900
+Processing by UsersController#send_instant as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"asbLwBZ6ztKpGXtZlXRTAoxeXegxfzSAI015L80OVuyIh1FKVppBnA6+a5HWe9m3AjCSKbSGczyRfz6EJhqzOQ==", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:66
+  Rendering music_distribution_mailer/instant_delivery.html.erb within layouts/mailer
+  Rendered music_distribution_mailer/instant_delivery.html.erb within layouts/mailer (0.4ms)
+  Rendering music_distribution_mailer/instant_delivery.text.erb within layouts/mailer
+  Rendered music_distribution_mailer/instant_delivery.text.erb within layouts/mailer (0.5ms)
+MusicDistributionMailer#instant_delivery: processed outbound mail in 538.0ms
+Sent mail to coding_addiction@yahoo.co.jp (2967.8ms)
+Date: Tue, 03 Sep 2019 18:58:16 +0900
+From: from@example.com
+To: coding_addiction@yahoo.co.jp
+Message-ID: <5d6e3938a1138_20993fca516d9ad89180@akimotoshunsukenoMacBook.local.mail>
+Subject: =?UTF-8?Q?=E5=8D=B3=E6=99=82=E9=85=8D=E4=BF=A1=E3=81=A7=E3=81=99?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5d6e39389ea22_20993fca516d9ad89172a";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5d6e39389ea22_20993fca516d9ad89172a
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+Y29kaW5nX2FkZGljdGlvbkB5YWhvby5jby5qcOWum+OBq+mFjeS/oeOBl+OB
+puOBhOOBvuOBmQ0K
+
+----==_mimepart_5d6e39389ea22_20993fca516d9ad89172a
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta content=3D'text/html; charset=3DUTF-8' http-equiv=3D'Content-Ty=
+pe' />=0D
+  </head>=0D
+  <body>=0D
+    <p style=3D"border-bottom: solid 2px black;">=E2=96=A0 Artist</p>=0D
+    <p class=3D"album_text">Franz Schubert</p>=0D
+    <p style=3D"border-bottom: solid 2px black;">=E2=96=A0 Album</p>=0D
+    <p class=3D"album_text">Schubert: Lieder</p>=0D
+    <p style=3D"border-bottom: solid 2px black;">=E2=96=A0 Release Date</=
+p>=0D
+    <p class=3D"album_text">1974-01-08</p>=0D
+    <p><a href=3D'https://open.spotify.com/album/0ZCauIx8Q695ZXjVVHErqZ'>=
+<img src=3D'https://i.scdn.co/image/251be959b03ae4cbbc1bdef840917a4e29583=
+947'></a></p>=0D
+  </body>=0D
+</html>=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5d6e39389ea22_20993fca516d9ad89172a--
+
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 4128ms (Views: 90.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2019-09-03 18:58:50 +0900
+Processing by HomeController#top as HTML
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 574ms (Views: 29.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create" for ::1 at 2019-09-03 18:59:00 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sSH7KA1M3aOlu59kqubURCOHVkvYBM0IS2ooTB2VRL4K0DEURZmImXZHCnCFivbIa/0J4Mg/YF3COz0N8fQpiQ==", "mail_address"=>"killerpass0111@gmail.com"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:19
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`mail_address` = BINARY 'killerpass0111@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:19
+  [1m[36mUser Create (7.1ms)[0m  [1m[32mINSERT INTO `users` (`mail_address`, `created_at`, `updated_at`) VALUES ('killerpass0111@gmail.com', '2019-09-03 09:59:00', '2019-09-03 09:59:00')[0m
+  ↳ app/controllers/users_controller.rb:19
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:19
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 619ms (Views: 27.5ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/index" for ::1 at 2019-09-03 18:59:06 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 551ms (Views: 30.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/1/send_instant" for ::1 at 2019-09-03 18:59:29 +0900
+Processing by UsersController#send_instant as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2q1EQFZtZabNCxLHVNWLwcCh90QWs4X4Ip1xxW4jmcU47N7KFo3q6GqsAg8X2gF0Ts84hZNKwkSQrzZuhTd8EA==", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:66
+  Rendering music_distribution_mailer/instant_delivery.html.erb within layouts/mailer
+  Rendered music_distribution_mailer/instant_delivery.html.erb within layouts/mailer (0.5ms)
+  Rendering music_distribution_mailer/instant_delivery.text.erb within layouts/mailer
+  Rendered music_distribution_mailer/instant_delivery.text.erb within layouts/mailer (0.5ms)
+MusicDistributionMailer#instant_delivery: processed outbound mail in 654.8ms
+Sent mail to coding_addiction@yahoo.co.jp (3136.1ms)
+Date: Tue, 03 Sep 2019 18:59:30 +0900
+From: from@example.com
+To: coding_addiction@yahoo.co.jp
+Message-ID: <5d6e39829bd67_20993fca516d9ad89207f@akimotoshunsukenoMacBook.local.mail>
+Subject: =?UTF-8?Q?=E5=8D=B3=E6=99=82=E9=85=8D=E4=BF=A1=E3=81=A7=E3=81=99?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5d6e39829b483_20993fca516d9ad8919c2";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5d6e39829b483_20993fca516d9ad8919c2
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+Y29kaW5nX2FkZGljdGlvbkB5YWhvby5jby5qcOWum+OBq+mFjeS/oeOBl+OB
+puOBhOOBvuOBmQ0K
+
+----==_mimepart_5d6e39829b483_20993fca516d9ad8919c2
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta content=3D'text/html; charset=3DUTF-8' http-equiv=3D'Content-Ty=
+pe' />=0D
+  </head>=0D
+  <body>=0D
+    <p style=3D"border-bottom: solid 2px black;">=E2=96=A0 Artist</p>=0D
+    <p class=3D"album_text">Miguel y Eugenio</p>=0D
+    <p style=3D"border-bottom: solid 2px black;">=E2=96=A0 Album</p>=0D
+    <p class=3D"album_text">En Junio</p>=0D
+    <p style=3D"border-bottom: solid 2px black;">=E2=96=A0 Release Date</=
+p>=0D
+    <p class=3D"album_text">1972-05-13</p>=0D
+    <p><a href=3D'https://open.spotify.com/album/5c3TjNUOeGEww164nrYLwa'>=
+<img src=3D'https://i.scdn.co/image/d39ea04c7eefebc8a60747af1b951f089c1a3=
+31b'></a></p>=0D
+  </body>=0D
+</html>=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5d6e39829b483_20993fca516d9ad8919c2--
+
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 4431ms (Views: 33.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/1/send_instant" for ::1 at 2019-09-03 19:09:05 +0900
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/aksk/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/1/send_instant"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-09-03 19:09:08 +0900
+Processing by HomeController#top as HTML
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 1600ms (Views: 48.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/index" for ::1 at 2019-09-03 19:09:12 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (33.9ms)
+Completed 200 OK in 637ms (Views: 35.6ms | ActiveRecord: 25.0ms)
+
+
+Started POST "/1/send_instant" for ::1 at 2019-09-03 19:09:14 +0900
+Processing by UsersController#send_album_mail as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/99oZZQcQZO3E7PwfpzN/FcKnbtRQGrK6rTmLOCuIo8dnvLv1PzO3RC0ozg9k0dJ2WRSetS5LXZYhqGHC7rHWg==", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/controllers/users_controller.rb:83
+MusicDistributionMailer#regular_delivery: processed outbound mail in 610.1ms
+Completed 500 Internal Server Error in 1150ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::MissingTemplate (Missing template music_distribution_mailer/regular_delivery with "mailer". Searched in:
+  * "music_distribution_mailer"
+):
+  
+app/mailers/music_distribution_mailer.rb:14:in `regular_delivery'
+app/controllers/users_controller.rb:85:in `block in send_album_mail'
+app/controllers/users_controller.rb:83:in `send_album_mail'
+Started GET "/" for ::1 at 2019-09-03 19:12:32 +0900
+Processing by HomeController#top as HTML
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 628ms (Views: 24.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/index" for ::1 at 2019-09-03 19:12:35 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 670ms (Views: 31.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/1/send_instant" for ::1 at 2019-09-03 19:12:37 +0900
+Processing by UsersController#send_album_mail as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uJzoziu/cBYmBp3mt+Emn4AIeFLKF4kd0SPwI6AYcHFa3XJEa1//WIGhjS707qwqDma3k0/uzqFjEbeISwyVpA==", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/controllers/users_controller.rb:83
+MusicDistributionMailer#regular_delivery: processed outbound mail in 511.8ms
+Completed 500 Internal Server Error in 1268ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::MissingTemplate (Missing template music_distribution_mailer/regular_delivery with "mailer". Searched in:
+  * "music_distribution_mailer"
+):
+  
+app/mailers/music_distribution_mailer.rb:14:in `regular_delivery'
+app/controllers/users_controller.rb:85:in `block in send_album_mail'
+app/controllers/users_controller.rb:83:in `send_album_mail'
+Started GET "/" for ::1 at 2019-09-03 19:13:26 +0900
+Processing by HomeController#top as HTML
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 655ms (Views: 31.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/index" for ::1 at 2019-09-03 19:13:30 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 771ms (Views: 34.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/1/send_instant" for ::1 at 2019-09-03 19:13:31 +0900
+Processing by UsersController#send_album_mail as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zf2AdB24G6pkWTtyxp5pcqZ0q35xD/RbUeE68JWD3m4vvBr+XViU5MP+K7qFkePHKBpkv/T2s+fj031bfpc7uw==", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/controllers/users_controller.rb:83
+  Rendering music_distribution_mailer/regular_delivery.html.erb within layouts/mailer
+  Rendered music_distribution_mailer/regular_delivery.html.erb within layouts/mailer (0.5ms)
+  Rendering music_distribution_mailer/regular_delivery.text.erb within layouts/mailer
+  Rendered music_distribution_mailer/regular_delivery.text.erb within layouts/mailer (0.5ms)
+MusicDistributionMailer#regular_delivery: processed outbound mail in 599.6ms
+Sent mail to coding_addiction@yahoo.co.jp (3661.3ms)
+Date: Tue, 03 Sep 2019 19:13:32 +0900
+From: from@example.com
+To: coding_addiction@yahoo.co.jp
+Message-ID: <5d6e3cccedc3c_20993fca516d9d0892235@akimotoshunsukenoMacBook.local.mail>
+Subject: =?UTF-8?Q?=E5=AE=9A=E6=99=82=E9=85=8D=E4=BF=A1=E3=81=A7=E3=81=99?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5d6e3cccecbb4_20993fca516d9d08921ca";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5d6e3cccecbb4_20993fca516d9d08921ca
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta content=3D'text/html; charset=3DUTF-8' http-equiv=3D'Content-Ty=
+pe' />=0D
+  </head>=0D
+  <body>=0D
+    <p style=3D"border-bottom: solid 2px black;">=E2=96=A0 Artist</p>=0D
+    <p class=3D"album_text">Vaggelis Germanos</p>=0D
+    <p style=3D"border-bottom: solid 2px black;">=E2=96=A0 Album</p>=0D
+    <p class=3D"album_text">Erotiko Kourdisma</p>=0D
+    <p style=3D"border-bottom: solid 2px black;">=E2=96=A0 Release Date</=
+p>=0D
+    <p class=3D"album_text">2008-02-07</p>=0D
+    <p><a href=3D'https://open.spotify.com/album/0JwINvW20UopYDmwtixrRB'>=
+<img src=3D'https://i.scdn.co/image/07d510bcda114a1583fd2f2fed4b20d2ffcf9=
+965'></a></p>=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5d6e3cccecbb4_20993fca516d9d08921ca
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta content=3D'text/html; charset=3DUTF-8' http-equiv=3D'Content-Ty=
+pe' />=0D
+  </head>=0D
+  <body>=0D
+    <p style=3D"border-bottom: solid 2px black;">=E2=96=A0 Artist</p>=0D
+    <p class=3D"album_text">Vaggelis Germanos</p>=0D
+    <p style=3D"border-bottom: solid 2px black;">=E2=96=A0 Album</p>=0D
+    <p class=3D"album_text">Erotiko Kourdisma</p>=0D
+    <p style=3D"border-bottom: solid 2px black;">=E2=96=A0 Release Date</=
+p>=0D
+    <p class=3D"album_text">2008-02-07</p>=0D
+    <p><a href=3D'https://open.spotify.com/album/0JwINvW20UopYDmwtixrRB'>=
+<img src=3D'https://i.scdn.co/image/07d510bcda114a1583fd2f2fed4b20d2ffcf9=
+965'></a></p>=0D
+  </body>=0D
+</html>=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5d6e3cccecbb4_20993fca516d9d08921ca--
+
+  Rendering music_distribution_mailer/regular_delivery.html.erb within layouts/mailer
+  Rendered music_distribution_mailer/regular_delivery.html.erb within layouts/mailer (0.1ms)
+  Rendering music_distribution_mailer/regular_delivery.text.erb within layouts/mailer
+  Rendered music_distribution_mailer/regular_delivery.text.erb within layouts/mailer (0.0ms)
+MusicDistributionMailer#regular_delivery: processed outbound mail in 526.8ms
+Sent mail to killerpass0111@gmail.com (2961.4ms)
+Date: Tue, 03 Sep 2019 19:13:37 +0900
+From: from@example.com
+To: killerpass0111@gmail.com
+Message-ID: <5d6e3cd128029_20993fca516d9d0892471@akimotoshunsukenoMacBook.local.mail>
+Subject: =?UTF-8?Q?=E5=AE=9A=E6=99=82=E9=85=8D=E4=BF=A1=E3=81=A7=E3=81=99?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5d6e3cd1273e9_20993fca516d9d0892375";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5d6e3cd1273e9_20993fca516d9d0892375
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta content=3D'text/html; charset=3DUTF-8' http-equiv=3D'Content-Ty=
+pe' />=0D
+  </head>=0D
+  <body>=0D
+    <p style=3D"border-bottom: solid 2px black;">=E2=96=A0 Artist</p>=0D
+    <p class=3D"album_text">Justin Timberlake</p>=0D
+    <p style=3D"border-bottom: solid 2px black;">=E2=96=A0 Album</p>=0D
+    <p class=3D"album_text">What Goes Around...Comes Around</p>=0D
+    <p style=3D"border-bottom: solid 2px black;">=E2=96=A0 Release Date</=
+p>=0D
+    <p class=3D"album_text">2006-12-19</p>=0D
+    <p><a href=3D'https://open.spotify.com/album/0NvpeY8oCm6oIlhH5Jw4fo'>=
+<img src=3D'https://i.scdn.co/image/769c3dff0451701ee053a8b4ef3d485b0f5ee=
+9a2'></a></p>=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5d6e3cd1273e9_20993fca516d9d0892375
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta content=3D'text/html; charset=3DUTF-8' http-equiv=3D'Content-Ty=
+pe' />=0D
+  </head>=0D
+  <body>=0D
+    <p style=3D"border-bottom: solid 2px black;">=E2=96=A0 Artist</p>=0D
+    <p class=3D"album_text">Justin Timberlake</p>=0D
+    <p style=3D"border-bottom: solid 2px black;">=E2=96=A0 Album</p>=0D
+    <p class=3D"album_text">What Goes Around...Comes Around</p>=0D
+    <p style=3D"border-bottom: solid 2px black;">=E2=96=A0 Release Date</=
+p>=0D
+    <p class=3D"album_text">2006-12-19</p>=0D
+    <p><a href=3D'https://open.spotify.com/album/0NvpeY8oCm6oIlhH5Jw4fo'>=
+<img src=3D'https://i.scdn.co/image/769c3dff0451701ee053a8b4ef3d485b0f5ee=
+9a2'></a></p>=0D
+  </body>=0D
+</html>=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5d6e3cd1273e9_20993fca516d9d0892375--
+
+No template found for UsersController#send_album_mail, rendering head :no_content
+Completed 204 No Content in 8375ms (ActiveRecord: 0.3ms)
+
+
