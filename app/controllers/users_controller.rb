@@ -14,6 +14,20 @@ class UsersController < ApplicationController
     flash[:notice] = ""
   end
 
+  def login_form
+
+  end
+
+  def login
+    # if set_send_flag && ENV["USER_NAME"] == params[:user_name]
+    if set_send_flag && params[:user_name] == "hoge"
+      redirect_to :index
+    else
+      flash[:notice] = "ユーザー名かパスワードが一致しません"
+      render("users/login_form")
+    end
+  end
+
   def create
     @user =  User.new(mail_address: params[:mail_address])
     if @user.save
@@ -57,7 +71,7 @@ class UsersController < ApplicationController
   end
 
   def send_instant
-    unless set_dend_flag
+    unless set_send_flag
       @users = User.all
       render('users/index')
       return
@@ -77,7 +91,7 @@ class UsersController < ApplicationController
   end
 
   def send_album_mail
-    if set_dend_flag
+    if set_send_flag
       @users = User.all
 
       @users.each do |user|
@@ -88,10 +102,10 @@ class UsersController < ApplicationController
   end
 
   # 本番観葉でのみメール送信にsend_keyパラメータを要求する
-  def set_dend_flag
-    if Rails.env = "development"
+  def set_send_flag
+    if Rails.env == "development"
       true
-    elsif Rails.env = "production" && ENV["SEND_KEY"] == params[:send_key]
+    elsif Rails.env == "production" && ENV["SEND_KEY"] == params[:send_key]
       true
     else
       false

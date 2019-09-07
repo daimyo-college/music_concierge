@@ -4,7 +4,7 @@ class HomeController < ApplicationController
 
   def set_link
     @link_name = "登録一覧"
-    @link_path = "/index"
+    @link_path = "/login_form"
   end
 
   def top

@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   get '/' => 'home#top'
-  get '/index' => 'users#index'
   post '/' => 'users#send_album_mail'
+
+  get '/index' => 'users#index'
+  get '/login_form' => 'users#login_form'
+  post '/login' => 'users#login'
 
   post '/create' => 'users#create'
   get '/create' => 'home#top'
