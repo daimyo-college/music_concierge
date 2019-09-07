@@ -1,8 +1,11 @@
 class UsersController < ApplicationController
   before_action :set_link
   before_action :spofify
+  # before_action :authentication, only: [:index]
 
   protect_from_forgery :expect => [:send_album_mail]
+
+  USER_NAME = "master"
 
   def set_link
     @link_name = "TOPへ戻る"
@@ -10,18 +13,32 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
-    flash[:notice] = ""
+    if set_send_flag
+      @users = User.all
+      flash[:notice] = ""
+    else
+      redirect_to controller: :home, action: :top
+    end
   end
 
   def login_form
+  end
 
+  def authentication
+    if set_send_flag && params[:user_name] == USER_NAME
+      true
+    else
+      false
+    end
   end
 
   def login
     # if set_send_flag && ENV["USER_NAME"] == params[:user_name]
-    if set_send_flag && params[:user_name] == "hoge"
+    # if set_send_flag && params[:user_name] == USER_NAME
+    if authentication
+      # @login_flag = true
       redirect_to :index
+      # render("users/index")
     else
       flash[:notice] = "ユーザー名かパスワードが一致しません"
       render("users/login_form")
