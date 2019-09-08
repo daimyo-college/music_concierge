@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_link
   before_action :spofify
-  # before_action :authentication, only: [:index]
 
   protect_from_forgery :expect => [:send_album_mail]
 
@@ -13,7 +12,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    if set_send_flag
+    if session[:id]
       @users = User.all
       flash[:notice] = ""
     else
@@ -26,19 +25,16 @@ class UsersController < ApplicationController
 
   def authentication
     if set_send_flag && params[:user_name] == USER_NAME
-      true
+      session[:id] = params[:user_name]
     else
-      false
+      session[:id] = nil
     end
   end
 
   def login
-    # if set_send_flag && ENV["USER_NAME"] == params[:user_name]
-    # if set_send_flag && params[:user_name] == USER_NAME
-    if authentication
-      # @login_flag = true
+    authentication
+    if session[:id]
       redirect_to :index
-      # render("users/index")
     else
       flash[:notice] = "ユーザー名かパスワードが一致しません"
       render("users/login_form")
@@ -112,7 +108,6 @@ class UsersController < ApplicationController
       @users = User.all
 
       @users.each do |user|
-        # MusicDistributionMailer.instant_delivery(user).deliver_now
         MusicDistributionMailer.regular_delivery(user).deliver_now
       end
     end
