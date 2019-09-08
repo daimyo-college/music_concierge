@@ -1,8 +1,8 @@
 class MusicDistributionMailer < ApplicationMailer
   before_action :spofify
 
-  INSTANT_DELIVERY_SUBJECT = "即時配信です"
-  REGULAR_DELIVERY_SUBJECT = "定時配信です"
+  INSTANT_DELIVERY_SUBJECT = "本日のリコメンド！ | 即時配信"
+  REGULAR_DELIVERY_SUBJECT = "本日のリコメンド！ | 定時配信"
 
   def instant_delivery(user)
     @user = user

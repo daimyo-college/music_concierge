@@ -10,6 +10,7 @@
     <p class="album_text"><%= @album["name"] %></p>
     <p style="border-bottom: solid 2px black;">■ Release Date</p>
     <p class="album_text"><%= @album["release_date"] %></p>
+    <p style="border-bottom: solid 2px black;">■ Link</p>
     <p><a href='<%= @album["external_urls"]["spotify"] %>'><img src='<%= @album["images"][1]["url"]%>'></a></p>
   </body>
 </html>
